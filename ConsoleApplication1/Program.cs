@@ -13,7 +13,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             string username = "frankfralick@beckgroup.com";
-            string password = "2assistu";  //fill this in
+            string password = "MyPassword";  //fill this in
 
             Field field = new Field(username, password);
             AuthTicket t = field.GetTicket();
