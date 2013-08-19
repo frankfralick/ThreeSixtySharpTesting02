@@ -1,0 +1,10 @@
+C:\Projects\ThreeSixtySharpTesting02\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Projects\ThreeSixtySharpTesting02\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Projects\ThreeSixtySharpTesting02\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Projects\ThreeSixtySharpTesting02\ConsoleApplication1\bin\Debug\ThreeSixtySharp.dll
+C:\Projects\ThreeSixtySharpTesting02\ConsoleApplication1\bin\Debug\RestSharp.dll
+C:\Projects\ThreeSixtySharpTesting02\ConsoleApplication1\bin\Debug\ThreeSixtySharp.pdb
+C:\Projects\ThreeSixtySharpTesting02\ConsoleApplication1\bin\Debug\RestSharp.xml
+C:\Projects\ThreeSixtySharpTesting02\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Projects\ThreeSixtySharpTesting02\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Projects\ThreeSixtySharpTesting02\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

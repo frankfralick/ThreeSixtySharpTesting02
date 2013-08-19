@@ -13,16 +13,22 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             string username = "frankfralick@beckgroup.com";
-            string password = "MyPassword";  //fill this in
+            string password = "2assistu";  //fill this in
 
             Field field = new Field(username, password);
             AuthTicket t = field.GetTicket();
             List<Project> projects = field.GetProjects(t);
 
-            //I only have one project.
-            Project testProject = projects[0];
+            
+
+            //I have multiple test projects now.  Get the one we want to test now:
+            Project testProject = projects.Where(p => p.Name == "TEST - Document Importing").ToList()[0];
 
             List<File> files = field.GetAllFiles(t, testProject);
+
+
+
+
 
             //File I want to upload as a revision.  This is just some random text file I have been working with, I will include in repo:
             string testFile = "C:\\Projects\\ThreeSixtyTesting\\ProjectJSON.txt";
@@ -37,16 +43,28 @@ namespace ConsoleApplication1
             //this point, and each JSON return appears to be the same.
             List<File> destination_files = files.Where(p => p.Get_Original_Name() == origin_file_info.Name || p.Filename == origin_file_info.Name).ToList();
 
+
+
+
+
             if (destination_files.Count != 0)
             {
+
                 File destination_file = destination_files[0];
 
+                //******Test for DeleteRevision
+                //If you place a breakpoint in Field.Execute(RestRequest request) at line "if (response.ErrorException != null)"
+                //and examine response, you will see it returns "Unauthorized", no error.
+                field.DeleteRevision(t, testProject, destination_file, 0);
+
+                //******Test for PublishRevision
                 //It blows up here.  The methods "field.PublishNew" and "field.PublishBaseRevision" work fine and both return the same JSON.  
                 //The error you will get is "Root element missing" and this just means that it got nothing back in the response and tried to 
                 //create an instance of File with it and it obviously fails to do so.  If you are not familiar with RestSharp it should still
                 //be easy to look at the Field.PublishRevision method to see how the request is being formed.
                 //This returns status 500.
-                File new_revised_file = field.PublishRevision(t, testProject, destination_file.Document_Path, origin_file_info.FullName, destination_file.Document_Id);
+
+                //File new_revised_file = field.PublishRevision(t, testProject, destination_file.Document_Path, origin_file_info.FullName, destination_file.Document_Id);
             }
         }
     }
